@@ -121,12 +121,11 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
 
 	// 保护文件
 	UNICODE_STRING protectFileName;
-	RtlInitUnicodeString(&protectFileName, L"C:\\520.exe");
+	RtlInitUnicodeString(&protectFileName, L"C:\\Users\\Administrator\\Downloads\\内核层\\7\\强制结束进程\\ForceKillProcess_Test\\x64\\Debug\\testkill\\testkill.sys");
 	g_pFileObject = ProtectFile(protectFileName);
 
 	
 	PCWSTR huorongProcessName[3] = { L"HipsDaemon.exe" , L"HipsTray.exe",L"wsctrlsvc.exe" };
-
 	//强制结束进程
 	HANDLE processId;
 	LARGE_INTEGER interval;
@@ -153,7 +152,9 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
 		
 	//强制删除文件火绒
 	UNICODE_STRING forceDelFileName;
-	RtlInitUnicodeString(&forceDelFileName, L"C:\\520.exe");
+	RtlInitUnicodeString(&forceDelFileName, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin\\wsctrlsvc.exe");
+	RtlInitUnicodeString(&forceDelFileName, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin\\HipsDaemon.exe");
+	RtlInitUnicodeString(&forceDelFileName, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin\\HipsTray.exe");
 	status = ForceDeleteFile(forceDelFileName);
 	
 
