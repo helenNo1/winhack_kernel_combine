@@ -1,0 +1,62 @@
+;
+; testkill.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = testkill.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+testkill.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%testkill.DeviceDesc% = testkill_Device, Root\testkill ; TODO: edit hw-id
+
+[testkill_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+testkill.sys
+
+;-------------- Service installation
+[testkill_Device.NT.Services]
+AddService = testkill,%SPSVCINST_ASSOCSERVICE%, testkill_Service_Inst
+
+; -------------- testkill driver install sections
+[testkill_Service_Inst]
+DisplayName    = %testkill.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\testkill.sys
+
+[testkill_Device.NT.Wdf]
+KmdfService = testkill, testkill_wdfsect
+
+[testkill_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "testkill Installation Disk"
+testkill.DeviceDesc = "testkill Device"
+testkill.SVCDESC = "testkill Service"

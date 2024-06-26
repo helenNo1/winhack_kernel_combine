@@ -1,0 +1,29 @@
+﻿  Building 'testkill' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\testkill.inf
+  Stamping [Version] section with DriverVer=06/26/2024,19.56.17.702
+  Driver.c
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(9,68): warning C4100: “pRegPath”: 未引用的形参
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(85,45): warning C4100: “pDevObj”: 未引用的形参
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(98,45): warning C4100: “pDevObj”: 未引用的形参
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(103,8): warning C4189: “ulInputLen”: 局部变量已初始化但不引用
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(104,8): warning C4189: “ulOutputLen”: 局部变量已初始化但不引用
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(106,8): warning C4189: “pBuffer”: 局部变量已初始化但不引用
+  testkill.vcxproj -> C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\x64\Debug\testkill.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Administrator\Downloads\\7\\ForceKillProcess_Test\x64\Debug\testkill.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\x64\Debug\testkill\testkill.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Administrator\Downloads\\7\\ForceKillProcess_Test\x64\Debug\testkill\testkill.cat
+  
