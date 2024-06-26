@@ -39,6 +39,9 @@
     <ClInclude Include="ForceDelete.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FileManage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ForceKillProcess_Test\Driver.c">
@@ -54,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ForceDelete.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManage.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

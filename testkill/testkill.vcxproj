@@ -116,6 +116,7 @@
   <ItemGroup>
     <ClInclude Include="..\ForceKillProcess_Test\Driver.h" />
     <ClInclude Include="..\ForceKillProcess_Test\ForceKillProcess.h" />
+    <ClInclude Include="FileManage.h" />
     <ClInclude Include="FileProtect.h" />
     <ClInclude Include="ForceDelete.h" />
     <ClInclude Include="IrpFile.h" />
@@ -123,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="..\ForceKillProcess_Test\Driver.c" />
     <ClCompile Include="..\ForceKillProcess_Test\ForceKillProcess.c" />
+    <ClCompile Include="FileManage.c" />
     <ClCompile Include="FileProtect.c" />
     <ClCompile Include="ForceDelete.c" />
     <ClCompile Include="IrpFile.c" />

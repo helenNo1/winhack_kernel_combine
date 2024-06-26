@@ -1,7 +1,7 @@
 #include "ForceKillProcess.h"
 
 
-VOID ShowError(PCHAR lpszText, NTSTATUS ntStatus)
+static VOID ShowError(PCHAR lpszText, NTSTATUS ntStatus)
 {
 	DbgPrint("%s Error[0x%X]\n", lpszText, ntStatus);
 }

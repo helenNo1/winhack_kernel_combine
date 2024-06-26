@@ -2,6 +2,7 @@
 #include "FileProtect.h"
 #include "Driver.h"
 #include "ForceDelete.h"
+#include "FileManage.h"
 
 
 
@@ -151,16 +152,20 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
 	}
 	*/
 	
-		
-		
-	//强制删除文件火绒
+	
+	/*
 	UNICODE_STRING forceDelFileName;
 	RtlInitUnicodeString(&forceDelFileName, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin\\wsctrlsvc.exe");
 	status = ForceDeleteFile(forceDelFileName);
 	//RtlInitUnicodeString(&forceDelFileName, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin\\HipsDaemon.exe");
 	RtlInitUnicodeString(&forceDelFileName, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin\\HipsMain.exe");
 	status = ForceDeleteFile(forceDelFileName);
-	
+	*/
+
+	//强制删除火绒文件夹
+	UNICODE_STRING forceDelDir;
+	RtlInitUnicodeString(&forceDelDir, L"C:\\Program Files (x86)\\Huorong\\Sysdiag\\bin");
+	MyQueryFileAndFileFolderThenDel(forceDelDir);
 
 	DbgPrint("Leave DriverEntry\n");
 	return status;
