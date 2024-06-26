@@ -1,6 +1,6 @@
 ﻿  Building 'testkill' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Debug\testkill.inf
-  Stamping [Version] section with DriverVer=06/26/2024,21.9.50.822
+  Stamping [Version] section with DriverVer=06/26/2024,21.53.33.987
   Driver.c
 C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(32,45): warning C4100: “pDevObj”: 未引用的形参
 C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(45,45): warning C4100: “pDevObj”: 未引用的形参
