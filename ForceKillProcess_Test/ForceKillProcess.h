@@ -52,7 +52,7 @@ NTSTATUS ZwQuerySystemInformation(
     PULONG ReturnLength
 );
 
-NTSTATUS GetProcessIdByName(PCWSTR processName, PHANDLE processId);
+NTSTATUS GetProcessIdByName(UNICODE_STRING processName, PHANDLE processId);
 
 // 强制结束指定进程
 NTSTATUS ForceKillProcess(HANDLE hProcessId);

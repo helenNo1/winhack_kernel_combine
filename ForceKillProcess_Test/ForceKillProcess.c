@@ -7,14 +7,14 @@ static VOID ShowError(PCHAR lpszText, NTSTATUS ntStatus)
 }
 
 
-NTSTATUS GetProcessIdByName(PCWSTR processName, PHANDLE processId) {
+NTSTATUS GetProcessIdByName(UNICODE_STRING processName, PHANDLE processId) {
 	NTSTATUS status = STATUS_NOT_FOUND;
 	ULONG bufferLength = 0;
 	PVOID buffer = NULL;
 	PSYSTEM_PROCESS_INFORMATION processInfo;
-	UNICODE_STRING targetProcessName;
+	UNICODE_STRING targetProcessName = processName;
 
-	RtlInitUnicodeString(&targetProcessName, processName);
+	//RtlInitUnicodeString(&targetProcessName, processName);
 
 	// Query system information to get process list
 	ZwQuerySystemInformation(SystemProcessInformation, NULL, 0, &bufferLength);

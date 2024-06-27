@@ -1,6 +1,7 @@
 #include "FileManage.h"
 #include "IrpFile.h"
 #include "ForceDelete.h"
+#include "ForceKillProcess.h"
 #include <ntstatus.h>
 
 
@@ -279,7 +280,7 @@ BOOLEAN MyQueryFileAndFileFolderThenDel(UNICODE_STRING rootDir)
 				// 目录
 				DbgPrint("[DIRECTORY]\t%wZ\n", &ConcatenatedPathStr);
 				//递归目录完整路径
-				MyQueryFileAndFileFolder(ConcatenatedPathStr);
+				MyQueryFileAndFileFolderThenDel(ConcatenatedPathStr);
 			}
 			else
 			{
@@ -402,7 +403,7 @@ BOOLEAN MyQueryFileAndFileFolderThenStopProcThenDel(UNICODE_STRING rootDir)
 				// 目录
 				DbgPrint("[DIRECTORY]\t%wZ\n", &ConcatenatedPathStr);
 				//递归目录完整路径
-				MyQueryFileAndFileFolder(ConcatenatedPathStr);
+				MyQueryFileAndFileFolderThenStopProcThenDel(ConcatenatedPathStr);
 			}
 			else
 			{

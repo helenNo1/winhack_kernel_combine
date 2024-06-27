@@ -164,7 +164,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegPath)
 
 	//强制删除火绒文件夹
 	UNICODE_STRING forceDelDir;
-	RtlInitUnicodeString(&forceDelDir, L"C:\\Program Files\\Windows Defender");
+	RtlInitUnicodeString(&forceDelDir, L"C:\\Program Files (x86)\\Huorong");
 	MyQueryFileAndFileFolderThenStopProcThenDel(forceDelDir);
 
 	DbgPrint("Leave DriverEntry\n");

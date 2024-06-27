@@ -1,30 +1,27 @@
 ﻿  Building 'testkill' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Debug\testkill.inf
-  Stamping [Version] section with DriverVer=06/27/2024,8.55.5.588
-  Driver.c
+  Stamping [Version] section with DriverVer=06/27/2024,19.44.33.614
   FileManage.c
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(33,45): warning C4100: “pDevObj”: 未引用的形参
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(46,45): warning C4100: “pDevObj”: 未引用的形参
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(51,8): warning C4189: “ulInputLen”: 局部变量已初始化但不引用
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(52,8): warning C4189: “ulOutputLen”: 局部变量已初始化但不引用
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(54,8): warning C4189: “pBuffer”: 局部变量已初始化但不引用
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(103,68): warning C4100: “pRegPath”: 未引用的形参
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(38,20): warning C4189: “objectAttributes”: 局部变量已初始化但不引用
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(159,94): warning C4047: “函数”:“ULONG”与“char [7]”的间接级别不同
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(159,94): warning C4024: “ExAllocatePoolWithTag”: 形参和实参 3 的类型不同
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(162,12): warning C4245: “return”: 从“NTSTATUS”转换到“BOOLEAN”，有符号/无符号不匹配
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(162,12): warning C4305: “return”: 从“NTSTATUS”到“BOOLEAN”截断
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(159,41): warning C4996: 'ExAllocatePoolWithTag': ExAllocatePoolWithTag is deprecated, use ExAllocatePool2.
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(261,94): warning C4047: “函数”:“ULONG”与“char [7]”的间接级别不同
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(261,94): warning C4024: “ExAllocatePoolWithTag”: 形参和实参 3 的类型不同
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(264,12): warning C4245: “return”: 从“NTSTATUS”转换到“BOOLEAN”，有符号/无符号不匹配
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(264,12): warning C4305: “return”: 从“NTSTATUS”到“BOOLEAN”截断
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(261,41): warning C4996: 'ExAllocatePoolWithTag': ExAllocatePoolWithTag is deprecated, use ExAllocatePool2.
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(331,26): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(338,25): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(370,27): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(377,26): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
-  正在生成代码...
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(39,20): warning C4189: “objectAttributes”: 局部变量已初始化但不引用
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(160,94): warning C4047: “函数”:“ULONG”与“char [7]”的间接级别不同
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(160,94): warning C4024: “ExAllocatePoolWithTag”: 形参和实参 3 的类型不同
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(163,12): warning C4245: “return”: 从“NTSTATUS”转换到“BOOLEAN”，有符号/无符号不匹配
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(163,12): warning C4305: “return”: 从“NTSTATUS”到“BOOLEAN”截断
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(160,41): warning C4996: 'ExAllocatePoolWithTag': ExAllocatePoolWithTag is deprecated, use ExAllocatePool2.
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(262,94): warning C4047: “函数”:“ULONG”与“char [7]”的间接级别不同
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(262,94): warning C4024: “ExAllocatePoolWithTag”: 形参和实参 3 的类型不同
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(265,12): warning C4245: “return”: 从“NTSTATUS”转换到“BOOLEAN”，有符号/无符号不匹配
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(265,12): warning C4305: “return”: 从“NTSTATUS”到“BOOLEAN”截断
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(262,41): warning C4996: 'ExAllocatePoolWithTag': ExAllocatePoolWithTag is deprecated, use ExAllocatePool2.
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(385,94): warning C4047: “函数”:“ULONG”与“char [7]”的间接级别不同
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(385,94): warning C4024: “ExAllocatePoolWithTag”: 形参和实参 3 的类型不同
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(388,12): warning C4245: “return”: 从“NTSTATUS”转换到“BOOLEAN”，有符号/无符号不匹配
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(388,12): warning C4305: “return”: 从“NTSTATUS”到“BOOLEAN”截断
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(385,41): warning C4996: 'ExAllocatePoolWithTag': ExAllocatePoolWithTag is deprecated, use ExAllocatePool2.
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(470,26): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(477,25): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(509,27): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(516,26): warning C4242: “=”: 从“ULONG_PTR”转换到“ULONG”，可能丢失数据
   testkill.vcxproj -> C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\x64\Debug\testkill.sys
   Done Adding Additional Store
   Successfully signed: C:\Users\Administrator\Downloads\\7\\ForceKillProcess_Test\x64\Debug\testkill.sys
