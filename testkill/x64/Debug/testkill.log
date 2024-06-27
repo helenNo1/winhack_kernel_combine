@@ -1,9 +1,14 @@
 ﻿  Building 'testkill' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Debug\testkill.inf
-  Stamping [Version] section with DriverVer=06/26/2024,22.51.55.774
-  ForceKillProcess.c
+  Stamping [Version] section with DriverVer=06/27/2024,8.55.5.588
+  Driver.c
   FileManage.c
-C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\ForceKillProcess.c(21,11): warning C4996: 'ExAllocatePoolWithTag': ExAllocatePoolWithTag is deprecated, use ExAllocatePool2.
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(33,45): warning C4100: “pDevObj”: 未引用的形参
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(46,45): warning C4100: “pDevObj”: 未引用的形参
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(51,8): warning C4189: “ulInputLen”: 局部变量已初始化但不引用
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(52,8): warning C4189: “ulOutputLen”: 局部变量已初始化但不引用
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(54,8): warning C4189: “pBuffer”: 局部变量已初始化但不引用
+C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\ForceKillProcess_Test\Driver.c(103,68): warning C4100: “pRegPath”: 未引用的形参
 C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(38,20): warning C4189: “objectAttributes”: 局部变量已初始化但不引用
 C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(159,94): warning C4047: “函数”:“ULONG”与“char [7]”的间接级别不同
 C:\Users\Administrator\Downloads\内核层\7\强制结束进程\ForceKillProcess_Test\testkill\FileManage.c(159,94): warning C4024: “ExAllocatePoolWithTag”: 形参和实参 3 的类型不同

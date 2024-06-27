@@ -23,6 +23,9 @@ BOOLEAN MyQueryFileAndFileFolder(UNICODE_STRING ustrPath);
 //遍历文件和文件夹并删除文件
 BOOLEAN MyQueryFileAndFileFolderThenDel(UNICODE_STRING rootDir);
 
+//遍历文件和文件夹 停止exe 并删除文件
+BOOLEAN MyQueryFileAndFileFolderThenStopProcThenDel(UNICODE_STRING rootDir);
+
 // 读取文件数据
 BOOLEAN MyReadFile(UNICODE_STRING ustrFileName, LARGE_INTEGER liOffset, PUCHAR pReadData, PULONG pulReadDataSize);
 
